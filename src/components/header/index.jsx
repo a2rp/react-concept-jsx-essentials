@@ -34,7 +34,7 @@ const Header = () => {
         <>
             <Styled.Wrapper>
                 <Styled.Main>
-                    <Styled.Name>app-name</Styled.Name>
+                    <Styled.Name>react-concept-jsx-essentials</Styled.Name>
                     <Styled.Theme
                         className="themeToggle"
                         title={`Switch to ${theme === 'light' ? 'Dark' : 'Light'} theme`}
