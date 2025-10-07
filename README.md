@@ -1,5 +1,7 @@
 # react-concept-jsx-essentials
 
+![alt text](image.png)
+
 A focused demo that explains JSX from the ground up-definitions, syntax, and working examples (beginner → advanced).
 
 > Live: https://a2rp.github.io/react-concept-jsx-essentials/  
