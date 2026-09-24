@@ -129,7 +129,7 @@ function App(){
                             <Styled.Button onClick={() => setClicked((n) => n + 1)}>Click me</Styled.Button>
                             <span>Clicked: <Badge tone="success">{clicked}</Badge></span>
                         </Styled.BtnRow>
-                        <Code>{`function handle(){ console.log('clicked'); }
+                        <Code>{`function handle(){ notify('clicked'); }
 <button onClick={handle} />   // correct
 <button onClick={handle()} /> // wrong (calls immediately)`}</Code>
                     </Styled.Card>
@@ -334,7 +334,7 @@ items.map((item, i) => <Row key={i} {...item} />)`}</Code>
                     <Styled.Card>
                         <Styled.H4>Special props</Styled.H4>
                         <p><code>key</code> and <code>ref</code> are reserved; they don't appear in <code>props</code>.</p>
-                        <Code>{`function Item(props){ console.log(props.key); // undefined }`}</Code>
+                        <Code>{`function Item(props){ read(props.key); // undefined }`}</Code>
                     </Styled.Card>
                 </Styled.Row>
             </Styled.Section>

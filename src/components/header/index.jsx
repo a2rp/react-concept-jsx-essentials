@@ -1,54 +1,48 @@
-import React, { useEffect, useState } from 'react'
-import { TbSunMoon } from 'react-icons/tb'
-import { Styled } from './styled'
+import { useEffect, useState } from "react";
+import { TbSunMoon } from "react-icons/tb";
+import { Styled } from "./styled";
 
-// --- Theme handling ---
-const THEME_KEY = 'theme'; // 'dark' | 'light'
+const THEME_KEY = "theme";
+
 const getInitialTheme = () => {
     try {
         const saved = localStorage.getItem(THEME_KEY);
-        if (saved === 'light' || saved === 'dark') return saved;
-    } catch { }
-    // fall back to OS preference
-    if (typeof window !== 'undefined' && window.matchMedia) {
-        return window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+        if (saved === "light" || saved === "dark") return saved;
+    } catch {
+        return "dark";
     }
-    return 'dark';
-};
 
+    return window.matchMedia?.("(prefers-color-scheme: light)").matches ? "light" : "dark";
+};
 
 const Header = () => {
     const [theme, setTheme] = useState(getInitialTheme);
 
     useEffect(() => {
-        const root = document.documentElement;
-        root.setAttribute('data-theme', theme);
-        try {
-            localStorage.setItem(THEME_KEY, theme);
-        } catch { }
+        document.documentElement.setAttribute("data-theme", theme);
+        localStorage.setItem(THEME_KEY, theme);
     }, [theme]);
 
-    const toggleTheme = () => setTheme((t) => (t === 'light' ? 'dark' : 'light'));
-
     return (
-        <>
-            <Styled.Wrapper>
-                <Styled.Main>
-                    <Styled.Name>react-concept-jsx-essentials</Styled.Name>
-                    <Styled.Theme
-                        className="themeToggle"
-                        title={`Switch to ${theme === 'light' ? 'Dark' : 'Light'} theme`}
-                        // role="button"
-                        aria-pressed={theme === 'light' ? 'true' : 'false'}
-                        onClick={toggleTheme}
-                    >
-                        <TbSunMoon className='icon' size={18} />
-                    </Styled.Theme>
+        <Styled.Wrapper>
+            <Styled.Main>
+                <Styled.Name>
+                    <img src={`${import.meta.env.BASE_URL}logo.png`} alt="Ashish Ranjan logo" />
+                    <span>JSX Essentials</span>
+                </Styled.Name>
+                <Styled.Theme
+                    type="button"
+                    className="themeToggle"
+                    title={`Switch to ${theme === "light" ? "dark" : "light"} theme`}
+                    aria-label={`Switch to ${theme === "light" ? "dark" : "light"} theme`}
+                    aria-pressed={theme === "light"}
+                    onClick={() => setTheme((value) => (value === "light" ? "dark" : "light"))}
+                >
+                    <TbSunMoon className="icon" size={18} />
+                </Styled.Theme>
+            </Styled.Main>
+        </Styled.Wrapper>
+    );
+};
 
-                </Styled.Main>
-            </Styled.Wrapper>
-        </>
-    )
-}
-
-export default Header
+export default Header;

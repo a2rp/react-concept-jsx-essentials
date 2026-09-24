@@ -1,5 +1,5 @@
 {
-    "name": "frontend",
+    "name": "react-concept-jsx-essentials",
     "private": true,
     "version": "0.0.0",
     "type": "module",
@@ -27,5 +27,7 @@
         "eslint-plugin-react-refresh": "^0.4.19",
         "globals": "^16.0.0",
         "vite": "^6.3.5"
-    }
+    },
+    "homepage": "https://a2rp.github.io/react-concept-jsx-essentials/",
+    "description": "Interactive React JSX reference with practical syntax and live examples."
 }

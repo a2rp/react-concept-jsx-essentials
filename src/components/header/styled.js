@@ -1,14 +1,10 @@
 import styled from "styled-components";
 
 /* ---- Design tokens via CSS vars ---- */
-const bg = "var(--bg, #0d1117)";
-const text = "var(--text, #f3f4f6)";
 const muted = "var(--muted, #a0a0a7)";
-const card = "var(--card, #111318)";
 const border = "var(--border, #23262d)";
 const accent = "var(--accent, #5aa9ff)";
 const accentSoft = "var(--accent-soft, rgba(90,169,255,0.15))";
-const shadow = "var(--shadow, 0 10px 30px rgba(0,0,0,0.35))";
 
 export const Styled = {
     Wrapper: styled.header`
@@ -38,10 +34,20 @@ export const Styled = {
         padding: 0 16px;
     `,
     Name: styled.div`
+        display: flex;
+        align-items: center;
+        gap: 10px;
         font-family: "Antonio", sans-serif;
         font-size: 18px;
         font-weight: 700;
         letter-spacing: 0.4px;
+
+        img {
+            width: 34px;
+            height: 34px;
+            object-fit: contain;
+            border-radius: 8px;
+        }
     `,
     Theme: styled.div`
         display: inline-flex;

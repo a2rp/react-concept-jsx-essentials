@@ -12,7 +12,7 @@ export const Styled = {
     `,
     Main: styled.main`
         /* Keep content readable below a fixed header (56px) */
-        padding: 72px 16px 16px; /* 56px header + 16px gap */
+        padding: 0 16px 16px; /* 56px header + 16px gap */
         width: 100%;
         min-height: 100vh;
 
