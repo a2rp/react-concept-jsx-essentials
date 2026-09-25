@@ -11,6 +11,7 @@ An interactive React and Vite reference for learning JSX syntax, props, events, 
 - Dark and light theme with saved preference
 - Responsive cards, code examples and accessible controls
 - Fixed branded header with icon-only links in the footer
+- Floating go-to-top control with smooth scrolling
 
 ## Tech stack
 
