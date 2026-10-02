@@ -2,20 +2,20 @@
    THEME TOKENS (Default = Dark)
    ========================================================= */
 :root {
-    --bg: #0d1117;
-    --text: #f3f4f6;
-    --muted: #a0a0a7;
-    --card: #111318;
-    --surface: #0f141b; /* layer above bg */
-    --border: #23262d;
-    --accent: #5aa9ff; /* blue accent*/
-    --accent-soft: rgba(90, 169, 255, 0.15);
+    --bg: #111111;
+    --text: #f4f4f4;
+    --muted: #a1a1a1;
+    --card: #131313;
+    --surface: #141414; /* layer above bg */
+    --border: #262626;
+    --accent: #a5a5a5; /* blue accent*/
+    --accent-soft: rgba(165, 165, 165, 0.15);
     --shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
 
     /* semantic colors*/
-    --success: #2f74ff; /* success as blue */
-    --danger: #ef4444;
-    --warning: #f59e0b;
+    --success: #7c7c7c; /* success as blue */
+    --danger: #848484;
+    --warning: #b1b1b1;
 
     --radius: 16px; /* global rounding */
     --maxw: 1440px; /* app container */
@@ -27,20 +27,20 @@
 
 /* Light theme via attribute */
 :root[data-theme="light"] {
-    --bg: #f7f9fc;
-    --text: #0b1220;
-    --muted: #505a6b;
+    --bg: #f9f9f9;
+    --text: #121212;
+    --muted: #595959;
     --card: #ffffff;
     --surface: #ffffff;
-    --border: #e5e7eb;
-    --accent: #2f74ff;
-    --accent-soft: rgba(47, 116, 255, 0.12);
-    --shadow: 0 10px 30px rgba(2, 6, 23, 0.08);
+    --border: #e7e7e7;
+    --accent: #7c7c7c;
+    --accent-soft: rgba(124, 124, 124, 0.12);
+    --shadow: 0 10px 30px rgba(7, 7, 7, 0.08);
 
     /* semantic colors*/
-    --success: #2f74ff;
-    --danger: #dc2626;
-    --warning: #d97706;
+    --success: #7c7c7c;
+    --danger: #727272;
+    --warning: #909090;
 
     --picker-filter: invert(0);
 }
@@ -48,19 +48,19 @@
 /* Respect OS preference if no data-theme attribute is set */
 @media (prefers-color-scheme: light) {
     :root:not([data-theme]) {
-        --bg: #f7f9fc;
-        --text: #0b1220;
-        --muted: #505a6b;
+        --bg: #f9f9f9;
+        --text: #121212;
+        --muted: #595959;
         --card: #ffffff;
         --surface: #ffffff;
-        --border: #e5e7eb;
-        --accent: #2f74ff;
-        --accent-soft: rgba(47, 116, 255, 0.12);
-        --shadow: 0 10px 30px rgba(2, 6, 23, 0.08);
+        --border: #e7e7e7;
+        --accent: #7c7c7c;
+        --accent-soft: rgba(124, 124, 124, 0.12);
+        --shadow: 0 10px 30px rgba(7, 7, 7, 0.08);
 
-        --success: #2f74ff;
-        --danger: #dc2626;
-        --warning: #d97706;
+        --success: #7c7c7c;
+        --danger: #727272;
+        --warning: #909090;
 
         --picker-filter: invert(0);
     }

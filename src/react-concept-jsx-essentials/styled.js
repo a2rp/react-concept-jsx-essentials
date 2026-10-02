@@ -2,13 +2,13 @@ import styled from "styled-components";
 
 /* Tokens from global CSS variables */
 const bg = "var(--bg, #0d1117)";
-const text = "var(--text, #f3f4f6)";
-const muted = "var(--muted, #a0a0a7)";
+const text = "var(--text, #f4f4f4)";
+const muted = "var(--muted, #a1a1a1)";
 const card = "var(--card, #111318)";
-const surface = "var(--surface, #0f141b)";
-const border = "var(--border, #23262d)";
-const accent = "var(--accent, #5aa9ff)";
-const accentSoft = "var(--accent-soft, rgba(90,169,255,0.15))";
+const surface = "var(--surface, #141414)";
+const border = "var(--border, #262626)";
+const accent = "var(--accent, #a5a5a5)";
+const accentSoft = "var(--accent-soft, rgba(165, 165, 165, 0.15))";
 const shadow = "var(--shadow, 0 10px 30px rgba(0,0,0,0.35))";
 const radius = "var(--radius, 16px)";
 const maxw = "var(--maxw, 1440px)";
@@ -183,8 +183,8 @@ export const Styled = {
         }
 
         &[data-variant="danger"] {
-            border-color: #ef4444;
-            color: #ef9a9a;
+            border-color: #848484;
+            color: #b1b1b1;
         }
         &[data-variant="ghost"] {
             background: transparent;

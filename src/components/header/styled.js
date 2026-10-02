@@ -1,10 +1,10 @@
 import styled from "styled-components";
 
 /* ---- Design tokens via CSS vars ---- */
-const muted = "var(--muted, #a0a0a7)";
-const border = "var(--border, #23262d)";
-const accent = "var(--accent, #5aa9ff)";
-const accentSoft = "var(--accent-soft, rgba(90,169,255,0.15))";
+const muted = "var(--muted, #a1a1a1)";
+const border = "var(--border, #262626)";
+const accent = "var(--accent, #a5a5a5)";
+const accentSoft = "var(--accent-soft, rgba(165, 165, 165, 0.15))";
 
 export const Styled = {
     Wrapper: styled.header`
