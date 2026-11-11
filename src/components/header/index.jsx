@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { TbSunMoon } from "react-icons/tb";
 import { Styled } from "./styled";
 
-const THEME_KEY = "theme";
+const THEME_KEY = "react-concept-jsx-essentials-theme";
 
 const getInitialTheme = () => {
     try {
@@ -20,7 +20,11 @@ const Header = () => {
 
     useEffect(() => {
         document.documentElement.setAttribute("data-theme", theme);
-        localStorage.setItem(THEME_KEY, theme);
+        try {
+            localStorage.setItem(THEME_KEY, theme);
+        } catch {
+            // The selected theme still applies for this visit if storage is unavailable.
+        }
     }, [theme]);
 
     return (

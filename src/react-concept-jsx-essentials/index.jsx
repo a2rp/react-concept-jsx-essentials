@@ -1,4 +1,4 @@
-import React, { useMemo, useState } from "react";
+import { useMemo, useState } from "react";
 import { Styled } from "./styled";
 
 /**
@@ -57,8 +57,9 @@ export default function JSXEssentials() {
         <Styled.Page>
             <Styled.Title>JSX Essentials - Definitions, Syntax & Demos</Styled.Title>
             <Styled.Subtitle>
-                JSX is a syntax that compiles to <code>React.createElement</code>. It's not HTML, it's JavaScript with markup
-                sugar. Below: rules, patterns, and gotchas-from basics to advanced.
+                JSX is JavaScript syntax for describing UI, not HTML. Vite uses React's automatic JSX transform, which emits
+                helpers from <code>react/jsx-runtime</code>; the older classic transform used <code>React.createElement</code>.
+                Below: rules, patterns, and gotchas-from basics to advanced.
             </Styled.Subtitle>
 
             {/* 1) What is JSX? */}
@@ -68,8 +69,8 @@ export default function JSXEssentials() {
                     <Styled.Card>
                         <Styled.H4>Definition</Styled.H4>
                         <p>
-                            JSX lets you write elements like <code>{`<div />`}</code> directly in JavaScript. A build step (Babel/Vite)
-                            turns it into <code>React.createElement</code> calls. JSX expressions evaluate to values.
+                            JSX lets you write elements like <code>{`<div />`}</code> directly in JavaScript. A build step transforms
+                            this syntax into calls to React's JSX runtime. JSX expressions evaluate to values.
                         </p>
                         <Code>{`// JSX is just an expression (can be assigned, returned, etc.)
 const title = <h1>Hello JSX</h1>;
@@ -243,7 +244,7 @@ function App(){
                 <Styled.BtnRow>
                     <Styled.Button onClick={() => setPeople((l) => shuffle(l))}>Shuffle</Styled.Button>
                     <Styled.Button
-                        onClick={() => setPeople((l) => [...l, { id: crypto.randomUUID().slice(0, 4), name: `New ${l.length + 1}` }])}
+                        onClick={() => setPeople((l) => [...l, { id: crypto.randomUUID(), name: `New ${l.length + 1}` }])}
                     >
                         Add
                     </Styled.Button>
@@ -349,6 +350,7 @@ function PersonRow({ name, note, onChange }) {
         <Styled.RowItem>
             <span>{name}</span>
             <input
+                aria-label={`Note for ${name}`}
                 value={note}
                 onChange={(e) => onChange(e.target.value)}
                 placeholder="Type a note; now shuffle/reorder the list"
